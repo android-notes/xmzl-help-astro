@@ -4,106 +4,62 @@ import '../styles/global.css'
 
 import * as url from "url";
 export interface Props {
-    node: {
-        title: string;
-        url?: string;
-        expand: boolean;
-        children?: Array<{ title: string; url: string, expand: boolean, children?: any[] }>;
-    };
+    node: [
+        {
+            title: string;
+            url?: string;
+            children?: Array<{ title: string; url: string, children?: any[] }>;
+        }
+    ];
 }
 
 const {node, depth = 0} = Astro.props;
-const insert = `${depth * 25}px`
+const insert = `${depth * 25}px`;
 ---
-<script>
-    // 在页面上找到所有带有 `alert` 类的按钮。
-    // const buttons = document.querySelectorAll('.item');
-    //
-    // // 处理每个按钮上的点击事件。
-    // buttons.forEach((button) => {
-    //     button.addEventListener('click', () => {
-    //         alert('按钮被点击了！');
-    //     });
-    // });
-</script>
-<div class="root">
-    {node.url !== 'root' &&
-            <a class:list={['item', node.children ? (node.expand ? 'downArrow' : 'rightArrow') : '']}
-               href={node.url}>{node.title}</a>}
-    {node.children && node.children.length > 0 ? (
-            <ul>
-                {node.children.map((child) => (
-                        <li key={child.url}>
-                            <Astro.self node={child} depth={depth + 1}/>
-                        </li>
-                ))}
-            </ul>
-    ) : null}
-</div>
 
+{
+    (node || []).map(item =>
+    <details open>
+        <summary>
+            {item.url ? <a data-title={item.title}
+                           class="item"
+                           href={item.url}>{item.title}
+                    </a> :
+                    <span class="strong item">{item.title}</span>
+            }
+        </summary>
+        <Astro.self node={item.children} depth={depth + 1}/>
+    </details>
+        )
+    }
 <style define:vars={{insert}}>
+    details {
+        user-select: none;
+        color: var(--color-text);
+    }
 
-    .root {
+    .contents {
         background: white;
         font-size: 14px;
-    }
-
-    ul {
-        width: 100%;
-        list-style-type: none;
-        padding-left: 0;
-        margin: 0;
-    }
-
-
-    li {
-        display: flex;
-        flex-direction: column;
     }
 
     .item:hover {
         background-color: var(--background-hover);
         border-radius: 3px;
-        color: var(--color-theme-1);
-    }
-
-
-    .selected {
-        background-color: var(--background-hover);
-        border-radius: 3px;
-    }
-
-
-    ul {
-        list-style-type: none;
-        padding-left: 0px;
+        background: var(--color-theme-1);
+        color: white;
     }
 
     .item {
-
         display: flex;
         flex: 1;
         padding: 7px 7px 7px var(--insert);
         align-items: center; /* 确保子元素在垂直方向上居中对齐 */
         flex-direction: row; /* 水平排列子元素 */
         cursor: pointer;
-
     }
 
-
-    .rightArrow::before {
-        content: '';
-        display: inline-block;
-        width: 0;
-        height: 0;
-        border-top: 4px solid transparent; /* 上边框透明 */
-        border-bottom: 4px solid transparent; /* 下边框透明 */
-        border-right: 4px solid transparent;
-        border-left: 4px solid var(--color-text-hint); /* 左边框实色，决定了三角形的颜色 */
-        margin-right: 6px;
-    }
-
-    .downArrow::before {
+    details[open] span::before {
         content: '';
         display: inline-block;
         width: 0;
@@ -115,8 +71,26 @@ const insert = `${depth * 25}px`
         margin-right: 6px;
     }
 
+    details:not([open]) span::before {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent; /* 上边框透明 */
+        border-bottom: 4px solid transparent; /* 下边框透明 */
+        border-right: 4px solid transparent;
+        border-left: 4px solid var(--color-text-hint); /* 左边框实色，决定了三角形的颜色 */
+        margin-right: 6px;
+
+    }
+
     a {
         color: var(--color-text);
         text-decoration: none;
+    }
+
+
+    .strong {
+        font-weight: bold;
     }
 </style>

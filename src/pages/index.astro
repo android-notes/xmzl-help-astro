@@ -29,6 +29,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<div class="content">
 			<button class="alert">Click me!</button>
 			<a href="/docs/install/install">使用帮助</a>
+
+			<details open>
+				<summary>全部功能</summary>
+				<p>菜单项1</p>
+				<p>菜单项2</p>
+				<details open >
+					<summary style="padding-left: 30px">用户管理</summary>
+					<p style="padding-left: 30px">用户查询</p>
+					<p style="padding-left: 30px">用户赋权</p>
+					<p style="padding-left: 30px">用户组别管理</p>
+				</details>
+			</details>
 		</div>
 		<Footer />
 	</body>
@@ -38,4 +50,5 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		display: flex;
 		height: 100vh;
 	}
+
 </style>
