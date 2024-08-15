@@ -10,38 +10,47 @@ import TreeNode from './TreeNode.astro';
 const docTree = {
     title: 'Root',
     url: "root",
+    expand: true,
     children: [
         {
             title: '安装和激活',
             url: "",
+            expand: false,
             children: [
                 {
                     title: '安装小秘助理',
                     url: "/docs/install/install",
+                    expand: false,
                 },
                 {
                     title: '激活小秘助理',
                     url: "/docs/install/active",
+                    expand: false,
                 },
                 {
                     title: '安装Chrome浏览器插件',
                     url: "/docs/install/install-chrome-plugin",
+                    expand: false,
                 },
                 {
                     title: '安装其他浏览器插件',
                     url: "",
+                    expand: false,
                     children: [
                         {
                             title: '安装Edge插件',
                             url: "",
+                            expand: false,
                         },
                         {
                             title: '安装QQ浏览器插件',
                             url: "",
+                            expand: false,
                         },
                         {
                             title: '安装360极速浏览器X插件',
                             url: "",
+                            expand: false,
                         },
                     ]
                 },
@@ -50,44 +59,54 @@ const docTree = {
         {
             title: '快速入门',
             url: "",
+            expand: false,
             children: [
                 {
                     title: '软件功能介绍',
                     url: "",
+                    expand: false,
                 },
                 {
                     title: '搭建第一个自动化应用',
                     url: "",
+                    expand: false,
                 },
             ],
         },
         {
             title: '指令',
             url: "",
+            expand: false,
             children: [
                 {
                     title: '条件判断',
                     url: "",
+                    expand: false,
                     children: [
                         {
                             title: '如果',
                             url: "",
+                            expand: false,
                         },
                         {
                             title: '否则 - 如果',
                             url: "",
+                            expand: false,
                         },
                         {
                             title: '否则',
                             url: "",
+                            expand: false,
                         },
                         {
                             title: '图像是否存在',
                             url: "",
+                            expand: false,
                         },
                         {
                             title: '文字是否存在(OCR)',
                             url: "",
+                            expand: false,
                         },
                     ]
                 },
@@ -104,3 +123,6 @@ const docTree = {
 
 
 <TreeNode node={docTree}/>
+<style>
+
+</style>

@@ -1,0 +1,73 @@
+---
+import '../styles/md.css'
+import Navigation from "../components/Navigation.astro";
+const {title, modifyDate} = Astro.props;
+---
+<!-- -->
+<div class="root">
+    <div class="nav">
+        <Navigation/>
+    </div>
+    <div class="divider"></div>
+    <div class="container">
+        <div class="content">
+            <h1>{title}</h1>
+
+            <slot/>
+
+            <p>修改日期：{modifyDate}</p>
+        </div>
+    </div>
+</div>
+
+<!-- -->
+<style>
+    .nav {
+        width: 250px;
+    }
+
+    .root {
+        display: flex;
+        flex-direction: row;
+        overflow-y: hidden;
+        height: 100vh;
+    }
+
+    h1 {
+        width: 100%;
+        text-align: center;
+        padding: 15px;
+        margin: 0;
+    }
+
+    .divider {
+        height: 100%;
+        width: 2px;
+        background: #ebedf0;
+    }
+
+    .container {
+        flex: 1;
+        padding: 2em;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        overflow-y: auto;
+        background: white;
+        height: 100%;
+    }
+
+    .content {
+        max-width: 900px;
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    p {
+        width: 100%;
+        text-align: center;
+        color: #7e7e7e;
+        font-size: 0.85em;
+    }
+
+</style>

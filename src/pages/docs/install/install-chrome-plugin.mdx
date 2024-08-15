@@ -11,12 +11,12 @@ tags: []
 
 
 
-import ContentLayout from '../../../layouts/ContentLayout.astro'
+import DocsLayout from '../../../layouts/DocsLayout.astro'
 
 import Image from '../../../components/Image.astro'
 import A from '../../../components/A.astro'
 
-<ContentLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
     如果您需要使用Chrome浏览器进行网页自动化需要先安装Chrome浏览器及小秘助理Chrome插件，有两种安装方式。
     ### 方式1：使用本地CRX插件文件安装
     >- Chrome浏览器官方下载链接<A href='https://google.cn/chrome' target='_blank'></A>
@@ -42,4 +42,4 @@ import A from '../../../components/A.astro'
     <Image src="/add-extension-finish.png"/>
     3. `重启Chrome浏览器` 就可以正常使用网页自动化了
 
-</ContentLayout>
+</DocsLayout>

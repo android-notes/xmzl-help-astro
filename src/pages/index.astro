@@ -4,8 +4,20 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Navigation from '../components/Navigation.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-
 ---
+
+
+<script>
+	// 在页面上找到所有带有 `alert` 类的按钮。
+	const buttons = document.querySelectorAll('button.alert');
+
+	// 处理每个按钮上的点击事件。
+	buttons.forEach((button) => {
+		button.addEventListener('click', () => {
+			alert('按钮被点击了！');
+		});
+	});
+</script>
 
 <!doctype html>
 <html>
@@ -15,10 +27,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 	<body>
 		<!--<Header />-->
 		<div class="content">
-			<Navigation />
-			<main>
-
-			</main>
+			<button class="alert">Click me!</button>
+			<a href="/docs/install/install">使用帮助</a>
 		</div>
 		<Footer />
 	</body>

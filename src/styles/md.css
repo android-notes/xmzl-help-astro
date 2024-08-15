@@ -8001,7 +8001,7 @@ body.rtl #wmd-input,body.rtl #preview-contents,body.rtl .input-file-title,body.r
 }
 
 code {
-    color: #c7254e;
+    color: #ff0000;
     background-color: #f9f2f4;
     border-radius: 4px
 }

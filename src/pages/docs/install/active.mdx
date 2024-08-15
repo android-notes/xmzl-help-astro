@@ -8,15 +8,15 @@ tags: []
 
 ---
 
-import ContentLayout from '../../../layouts/ContentLayout.astro'
+import DocsLayout from '../../../layouts/DocsLayout.astro'
 
 import Image from '../../../components/Image.astro'
 
 
-<ContentLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
     使用`Ctrl + V`快捷键把激活码粘贴到激活码输入框，然后点击激活即可。
     <Image src='/installxmzl.png'/>
     如果您的激活码已经泄露或者遗忘请联系小秘助理官方客服重置激活码。
     <Image src='https://static.xmzl.work/wchat.png' width={"200px"}/>
     > **注意：每个激活码只能激活一次**
-</ContentLayout>
+</DocsLayout>

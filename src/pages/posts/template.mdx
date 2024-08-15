@@ -10,7 +10,7 @@ image:
 tags: ["astro", "blogging", "learning in public"]
 
 ---
-import ContentLayout from '../../layouts/ContentLayout.astro'
+import DocsLayout from '../../layouts/DocsLayout.astro'
 
 import Image from '../../components/Image.astro'
 
@@ -22,7 +22,7 @@ export function fancyJsHelper() {
   return "尝试使用 YAML 做到这一点！";
 }
 
-<ContentLayout title={frontmatter.title} fancyJsHelper={fancyJsHelper}>
+<DocsLayout title={frontmatter.title} fancyJsHelper={fancyJsHelper}>
   欢迎来到我的新 Astro 博客，使用 MDX！
   <Image src='https://static.xmzl.work/help/active.png'/>
     <Video src='https://static.xmzl.work/demo.mp4'/>
@@ -140,4 +140,4 @@ Bob-->Alice: I am good thanks!
 
 
 
-</ContentLayout>
+</DocsLayout>
