@@ -1,0 +1,14 @@
+---
+let {href, target = ''} = Astro.props
+const hasSlotContent = Astro.slots.default !== undefined;
+---
+<a href={href} target={target}>
+    {hasSlotContent ?
+            <slot/> : href}
+</a>
+<style>
+    a {
+
+    }
+
+</style>

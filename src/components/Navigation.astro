@@ -1,7 +1,106 @@
 ---
-const allPosts = await Astro.glob('../pages/docs/*.mdx');
----
-<ul>
-    {allPosts.map((post) => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-</ul>
+interface Frontmatter {
+    title: string;
+    description?: string;
+}
+// const allPosts = await Astro.glob<Frontmatter>('../pages/docs/**/*.mdx');
 
+import TreeNode from './TreeNode.astro';
+
+const docTree = {
+    title: 'Root',
+    url: "root",
+    children: [
+        {
+            title: '安装和激活',
+            url: "",
+            children: [
+                {
+                    title: '安装小秘助理',
+                    url: "/docs/install/install",
+                },
+                {
+                    title: '激活小秘助理',
+                    url: "/docs/install/active",
+                },
+                {
+                    title: '安装Chrome浏览器插件',
+                    url: "/docs/install/install-chrome-plugin",
+                },
+                {
+                    title: '安装其他浏览器插件',
+                    url: "",
+                    children: [
+                        {
+                            title: '安装Edge插件',
+                            url: "",
+                        },
+                        {
+                            title: '安装QQ浏览器插件',
+                            url: "",
+                        },
+                        {
+                            title: '安装360极速浏览器X插件',
+                            url: "",
+                        },
+                    ]
+                },
+            ],
+        },
+        {
+            title: '快速入门',
+            url: "",
+            children: [
+                {
+                    title: '软件功能介绍',
+                    url: "",
+                },
+                {
+                    title: '搭建第一个自动化应用',
+                    url: "",
+                },
+            ],
+        },
+        {
+            title: '指令',
+            url: "",
+            children: [
+                {
+                    title: '条件判断',
+                    url: "",
+                    children: [
+                        {
+                            title: '如果',
+                            url: "",
+                        },
+                        {
+                            title: '否则 - 如果',
+                            url: "",
+                        },
+                        {
+                            title: '否则',
+                            url: "",
+                        },
+                        {
+                            title: '图像是否存在',
+                            url: "",
+                        },
+                        {
+                            title: '文字是否存在(OCR)',
+                            url: "",
+                        },
+                    ]
+                },
+
+            ],
+        },
+    ],
+};
+---
+<!--<ul>-->
+<!--    {allPosts.map((post) =>-->
+<!--            <li><a href={post.url}>{post.frontmatter.title}</a></li>)}-->
+<!--</ul>-->
+
+
+<TreeNode node={docTree}/>

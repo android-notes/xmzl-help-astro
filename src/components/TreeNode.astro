@@ -1,0 +1,27 @@
+---
+// TreeNode.astro
+
+import * as url from "url";
+export interface Props {
+    node: {
+        title: string;
+        url?: string;
+        children?: Array<{ title: string; url: string, children?: any[] }>;
+    };
+}
+
+const {node} = Astro.props;
+---
+
+<div>
+    {node.url !== 'root' && <span>{node.url ? (<a href={node.url}>{node.title}</a>) : node.title}</span>}
+    {node.children && node.children.length > 0 ? (
+            <ul>
+                {node.children.map((child) => (
+                        <li key={child.url}>
+                            <Astro.self node={child}/>
+                        </li>
+                ))}
+            </ul>
+    ) : null}
+</div>

@@ -1,16 +1,19 @@
 ---
-const {src,alt=''} = Astro.props
-const width='550px',height='auto'
+let {src, alt = '', width = '550px'} = Astro.props
+if (!src.startsWith("http")) {
+    src = `https://static.xmzl.work/help${src}`
+}
+const height = 'auto'
 ---
 <div>
-    <img src={src} alt={alt} />
+    <img src={src} alt={alt}/>
 </div>
-<style define:vars={{width,height}}>
-    div{
+<style define:vars={{width, height}}>
+    div {
         width: 100%;
         display: flex;
         justify-content: center;
-        margin: 10px 0;
+        margin: 15px 0;
     }
 
     img {
@@ -21,10 +24,10 @@ const width='550px',height='auto'
         box-shadow: 0 0 10px #0003;
         text-align: center;
     }
+
     @media screen and (max-width: 768px) {
         img {
-            width: min( 100% - 2em, var(--width));
-
+            width: min(100% - 2em, var(--width));
         }
     }
 </style>
