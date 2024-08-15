@@ -1,0 +1,30 @@
+---
+const {src,alt=''} = Astro.props
+const width='550px',height='auto'
+---
+<div>
+    <video src={src} preload="auto" controls></video>
+</div>
+<style define:vars={{width,height}}>
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    video {
+        width: var(--width);
+        height: var(--height);
+        border: #dcdfe1 solid 1px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #0003;
+        text-align: center;
+
+    }
+    @media screen and (max-width: 768px) {
+        video {
+            width: min( 100% - 2em, var(--width));
+        }
+    }
+</style>

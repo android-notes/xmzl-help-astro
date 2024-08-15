@@ -1,0 +1,18 @@
+---
+import '../styles/md.css'
+const { title, fancyJsHelper } = Astro.props;
+---
+<!-- -->
+
+<div class="content">
+    <h1>{title}</h1>
+    <slot /> <!-- 你的内容会被插入到这里 -->
+    <p>{fancyJsHelper()}</p>
+</div>
+
+<!-- -->
+<style>
+    .content{
+        padding: 2em;
+    }
+</style>
