@@ -2,53 +2,85 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/md.css'
 import Navigation from '../components/Navigation.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
 ---
 
 
-<script>
-	// 在页面上找到所有带有 `alert` 类的按钮。
-	const buttons = document.querySelectorAll('button.alert');
-
-	// 处理每个按钮上的点击事件。
-	buttons.forEach((button) => {
-		button.addEventListener('click', () => {
-			alert('按钮被点击了！');
-		});
-	});
-</script>
-
 <!doctype html>
 <html>
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<!--<Header />-->
-		<div class="content">
-			<button class="alert">Click me!</button>
-			<a href="/docs/install/install">使用帮助</a>
-
-			<details open>
-				<summary>全部功能</summary>
-				<p>菜单项1</p>
-				<p>菜单项2</p>
-				<details open >
-					<summary style="padding-left: 30px">用户管理</summary>
-					<p style="padding-left: 30px">用户查询</p>
-					<p style="padding-left: 30px">用户赋权</p>
-					<p style="padding-left: 30px">用户组别管理</p>
-				</details>
-			</details>
-		</div>
-		<Footer />
-	</body>
+<head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+</head>
+<body>
+<!--<Header />-->
+<div class="content">
+    <div class="nav">
+        <Navigation/>
+    </div>
+    <div class="main">
+        <div class="title">使用帮助</div>
+        <div class="default-nav">
+            <Navigation/>
+        </div>
+    </div>
+</div>
+<Footer/>
+</body>
 </html>
 <style>
-	.content{
-		display: flex;
-		height: 100vh;
-	}
+    .content {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .default-nav {
+        display: flex;
+        justify-content: center;
+        width: 768px;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        background-attachment: fixed;
+        background-color: var(--color-bg-1);
+        background-size: 100vw 100vh;
+        background-image: radial-gradient(
+                50% 50% at 50% 50%,
+                rgba(255, 255, 255, 0.75) 0%,
+                rgba(255, 255, 255, 0) 100%
+        ),
+        linear-gradient(180deg, var(--color-bg-0) 0%, var(--color-bg-1) 15%, var(--color-bg-2) 50%);
+    }
+
+    .title {
+        font-size: 50px;
+        font-weight: bold;
+        margin: 220px 0 80px 0;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        .nav {
+            display: unset;
+            width: 100%;
+            margin: 1em;
+        }
+
+        .main {
+            display: none;
+
+        }
+
+    }
 
 </style>

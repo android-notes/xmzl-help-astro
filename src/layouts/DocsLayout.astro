@@ -1,6 +1,7 @@
 ---
 import '../styles/md.css'
 import Navigation from "../components/Navigation.astro";
+import A from "../components/A.astro";
 const {title, modifyDate} = Astro.props;
 ---
 <!-- -->
@@ -14,7 +15,9 @@ const {title, modifyDate} = Astro.props;
             <h1>{title}</h1>
 
             <slot/>
-
+            <div class="contents">
+                <A href="/">回到目录</A>
+            </div>
             <p>修改日期：{modifyDate}</p>
         </div>
     </div>
@@ -23,7 +26,7 @@ const {title, modifyDate} = Astro.props;
 <!-- -->
 <style>
     .nav {
-        width: 250px;
+        width: 220px;
         padding: 10px;
     }
 
@@ -71,4 +74,24 @@ const {title, modifyDate} = Astro.props;
         font-size: 0.85em;
     }
 
+    .contents {
+        display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+        .nav {
+            display: none;
+        }
+
+        .divider {
+            display: none;
+        }
+
+        .contents {
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            margin: 20px;
+        }
+    }
 </style>
