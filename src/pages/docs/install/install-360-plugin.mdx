@@ -1,0 +1,25 @@
+---
+
+title: '安装Edge插件'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+import A from '../../../components/A.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+
+    如果您需要使用QQ浏览器进行网页自动化需要先安装QQ浏览器及小秘助理插件。
+    >- CRX插件文件下载 <A href='https://static.xmzl.work/downloads/chrome-plugin.crx'></A>
+    1. 使用QQ浏览器打开 <A href="qqbrowser://extensions/"></A>
+    2. 打开`开发者模式`
+    3. 拖动`chrome-plugin.crx`文件到QQ浏览器中
+    4. 点击弹窗中的`添加扩展程序`
+    5. 安装成功后会显示在QQ浏览器中，请确保处于`开启`状态
+    6. `重启QQ浏览器`后就可以正常使用网页自动化了
+</DocsLayout>

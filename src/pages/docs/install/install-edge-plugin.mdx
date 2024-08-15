@@ -1,0 +1,45 @@
+---
+
+title: '安装Chrome插件'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+
+
+
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+
+import Image from '../../../components/Image.astro'
+import A from '../../../components/A.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    如果您需要使用Chrome浏览器进行网页自动化需要先安装Chrome浏览器及小秘助理Chrome插件，有两种安装方式。
+    ### 方式1：使用本地CRX插件文件安装
+    >- Chrome浏览器官方下载链接<A href='https://google.cn/chrome' target='_blank'></A>
+    >- CRX插件文件下载 <A href='https://static.xmzl.work/downloads/chrome-plugin.crx'></A>
+    1. 使用Chrome浏览器打开 <A href='chrome://extensions'>chrome://extensions</A>
+    2. 打开 `开发者模式`
+    <Image src="/chrome-extensions-page.png"/>
+    3. 拖动`chrome-plugin.crx`文件到Chrome中
+    <Image src="/install-extension.png"/>
+    4. 点击弹窗中的 `添加扩展程序`
+    <Image src="/add-extension.png"/>
+    5. 安装成功后会显示在Chrome中，请确保处于`开启`状态
+    <Image src="/add-extension-finish.png"/>
+    6. `重启Chrome浏览器` 就可以正常使用网页自动化了
+
+
+    ### 方式2：通过Chrome Web Store安装
+    >- Chrome浏览器官方下载链接<A href='https://google.cn/chrome' target='_blank'>https://google.cn/chrome</A>
+    1. 使用Chrome浏览器打开右侧链接并点击 `添加至Chrome` <A href='https://chromewebstore.google.com/detail/%E5%B0%8F%E7%A7%98%E5%8A%A9%E7%90%86-rpa/jggngfnggcoplekpgnjfkeabaglbigoi?utm_source=ext_app_menu&pli=1'>https://chromewebstore.google.com</A>
+    <Image src="/add-by-chrome-store.png"/>
+    2. 安装成功后会显示在Chrome中，请确保处于`开启`状态
+    <Image src="/add-extension-finish.png"/>
+    3. `重启Chrome浏览器` 就可以正常使用网页自动化了
+
+</DocsLayout>
