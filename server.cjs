@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // 如果找不到资源，则返回index.html (适用于SPA)
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dist', '404.html'));
 });
 
 app.listen(port, () => {
