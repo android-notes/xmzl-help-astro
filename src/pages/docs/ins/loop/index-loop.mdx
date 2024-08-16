@@ -1,0 +1,23 @@
+---
+
+title: '次数循环'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+
+
+import DocsLayout from '../../../../layouts/DocsLayout.astro'
+import Image from '../../../../components/Image.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    ### 指令说明
+    可以指定循环次数，包含`开始值`和`结束值`。
+    ### 示例
+    重复判断图片是否存在，行号执行顺序 `1 -> 2 -> 3 -> 2 -> 3 -> 2 -> 3`
+    <Image src='/ins/index-loop.png'/>
+</DocsLayout>

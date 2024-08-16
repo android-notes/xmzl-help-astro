@@ -1,0 +1,23 @@
+---
+
+title: '继续下次循环'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+
+import DocsLayout from '../../../../layouts/DocsLayout.astro'
+import Image from '../../../../components/Image.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    ### 指令说明
+    跳过后续指令，从循环开始处继续执行。可以搭配`次数循环`、`条件循环`、`列表循环`、`无限循环`一起使用
+    ### 示例
+    获取`百度网页`。假设当前已经打开的网页分别是`京东`、`淘宝`、`百度`、`小米`，则流程行号执行顺序为：`1 -> 2 -> 3 -> 4 -> 2 ->
+    3 -> 4 -> 2 -> 3 -> 5 -> 2 -> 3 -> 4`
+    <Image src='/ins/continue.png'/>
+</DocsLayout>

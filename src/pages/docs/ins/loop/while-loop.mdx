@@ -1,0 +1,21 @@
+---
+
+title: '无限循环'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+import DocsLayout from '../../../../layouts/DocsLayout.astro'
+import Image from '../../../../components/Image.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    ### 指令说明
+    重复执行，直到`Shift + S`强制退出为止
+    ### 示例
+    重复输出`执行中`，行号执行顺序 `1 -> 2 -> 2 -> 2 -> 2 -> 2 ...`
+    <Image src='/ins/while-loop.png'/>
+</DocsLayout>
