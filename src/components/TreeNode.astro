@@ -3,22 +3,23 @@ import '../styles/global.css'
 // TreeNode.astro
 
 import * as url from "url";
-export interface Props {
-    node: [
-        {
-            title: string;
-            url?: string;
-            children?: Array<{ title: string; url: string, children?: any[] }>;
-        }
-    ];
-}
+// export interface Props {
+//     node: [
+//         {
+//             title: string;
+//             url?: string;
+//             children?: Array<{ title: string; url: string, children?: any[] }>;
+//         }
+//     ];
+// }
+
 
 const {node, depth = 0} = Astro.props;
 const insert = `${depth * 25}px`;
 ---
 
 {
-    (node || []).map(item =>
+    (node || []).map((item:any) =>
     <details open>
         <summary>
             {item.url ? <a data-title={item.title}
