@@ -778,7 +778,21 @@ const docTree = [
 <!--    {allPosts.map((post) =>-->
 <!--            <li><a href={post.url}>{post.frontmatter.title}</a></li>)}-->
 <!--</ul>-->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const path = window.location.pathname;
+        const item = document.querySelector(`a[href='${path}']`)
+        item.scrollIntoView({
+            behavior: 'auto',  // 滚动行为：'auto'（默认）或 'smooth'（平滑滚动）
+            block: 'nearest',     // 垂直对齐方式：'start'（顶部），'center'（中间），'end'（底部），'nearest'（最近）
+            inline: 'nearest'    // 水平对齐方式：'start'，'center'，'end'，'nearest'
+        });
+        item.style.borderRadius = '3px'
+        item.style.background = 'var(--color-theme-1)'
+        item.style.color = 'white'
+    });
 
+</script>
 <TreeNode node={docTree}/>
 <style>
 
