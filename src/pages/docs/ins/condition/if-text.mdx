@@ -1,0 +1,27 @@
+---
+
+title: '文字是否存在(OCR)'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+
+
+import DocsLayout from '../../../../layouts/DocsLayout.astro'
+import Image from '../../../../components/Image.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    ### 指令说明
+    用于判断指定的文字是否存在，可以判断整个屏幕、当前激活的窗口、指定的窗口。
+    > - 该指令需要请求小秘助理服务器识别文字，每次识别花费0.1元。新用户可以免费识别30次，余额不足时可以通过小秘助理进行充值
+    > - 如果能通过捕获元素方式建议优先使用捕获元素方式，文字识别准确率无法达到100%
+    <Image src="/ins/text-ocr.png"/>
+    ### 示例
+    判断指定的窗口是否有特定的文字
+    <Image src="/ins/example-text-ocr.png"/>
+
+</DocsLayout>

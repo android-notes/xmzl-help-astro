@@ -1,0 +1,24 @@
+---
+
+title: '如果'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+import DocsLayout from '../../../../layouts/DocsLayout.astro'
+import Image from '../../../../components/Image.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+
+    ### 指令说明
+    判断条件是否成立，如果成立，则执行缩进的指令，不成立则执行`如果`指令的下一个兄弟指令
+    <Image src="/ins/if.png"/>
+    ### 示例
+    您可以选择或者输入，也可以输入Python表达式
+    <Image src="/ins/if-example.png"/>
+
+</DocsLayout>

@@ -1,0 +1,24 @@
+---
+
+title: '否则 - 如果'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+
+import DocsLayout from '../../../../layouts/DocsLayout.astro'
+import Image from '../../../../components/Image.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    ### 指令说明
+    需要配合`如果`指令一起使用，当`否则 - 如果`之前的`兄弟条件判断指令`都不成立时并且当前指令成立时则执行缩进的指令
+    ### 示例
+    条件指令及对应的流程图
+    <Image src="/ins/if-else-ins.png"/>
+    <Image src="/ins/if-else-flow.png"/>
+
+</DocsLayout>

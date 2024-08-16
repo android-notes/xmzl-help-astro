@@ -1,0 +1,52 @@
+---
+
+title: '功能介绍'
+modifyDate: "2024-08-15"
+description: ''
+author: ''
+tags: []
+
+---
+
+
+
+
+
+
+
+import DocsLayout from '../../../layouts/DocsLayout.astro'
+
+import Image from '../../../components/Image.astro'
+import A from '../../../components/A.astro'
+
+<DocsLayout title={frontmatter.title} modifyDate={frontmatter.modifyDate}>
+    ### 软件主页
+    您可以在这创建各种自动化应用（windows自动化、浏览器自动化、手机自动化），也可以导入/导出应用
+    > 例如您可以下载并导入右侧两个示例应用
+    > <A href="https://static.xmzl.work/downloads/%E5%BE%AE%E4%BF%A1%E6%8E%A8%E5%B9%BF.xma">微信推广.xma</A>
+    > <A href="https://static.xmzl.work/downloads/%E6%B7%98%E5%AE%9D%E9%94%80%E9%87%8F%E6%A6%9C.xma">淘宝销量榜.xma</A>
+
+    <Image src="/xmzl-main-page.png"/>
+    ### 应用列表
+    您创建的应用都会显示在这，您可以运行、编辑、导出等操作
+    <Image src="/app-options.png"/>
+    ### 流程编辑器
+    - 您可以在这搭建各种自动化，只需要把左侧的指令拖拽到右侧并稍加配置即可。支持`Ctrl+C/V/X/Z`等常用快捷键。点击`运行`按钮即可执行当前的自动化流程
+    <Image src="/xmzl-editor.png"/>
+    - 右击可以复制、粘贴、删除等
+    <Image src="/right-menu.png"/>
+    - 双击可以修改配置，自动过滤不匹配的数据类型
+    <Image src="/modify-config.png"/>
+    ### 日志
+    使用`输出日志`指令输出的日志会展示在`日志`中，流程错误原因也会出现在`日志`中
+    <Image src="/log.png"/>
+    ### 调试
+    您可以点击指令的行号添加断点，当通过调试方式执行到这条指令时会自动暂停执行
+    <Image src="/debug.png"/>
+    ### 计划任务
+    您可以在这配置自动化应用的触发时间
+    <Image src="/schedule-task.png"/>
+    ### 日志记录
+    您可以在这查看所有自动化任务的历史日志
+    <Image src="/log-history.png"/>
+</DocsLayout>
